@@ -47,27 +47,21 @@ public class P567PermutationInString{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
-        HashMap<Character, Integer> map = new HashMap<>();
+        int[] arr = new int[26];
         for (int i = 0; i < s1.length(); i++) {
-            if (map.containsKey(s1.charAt(i))) {
-                map.put(s1.charAt(i),map.get(s1.charAt(i))+1);
-            }else {
-                map.put(s1.charAt(i),1);
-            }
+            arr[s1.charAt(i)-'a']--;
         }
-        HashMap<Character, Integer> map1 =map;
-        for (int i = 0; i < s2.length(); i++) {
-            if (map1.containsKey(s2.charAt(i))) {
-                if (map1.get(s2.charAt(i))>1) {
-                    map1.put(s2.charAt(i),map1.get(s2.charAt(i))-1);
-                }else {
-                    map1.remove(s2.charAt(i));
-                }
+        int left=0;
+        for (int right = 0; right < s2.length(); right++) {
+            int x=s2.charAt(right)-'a';
+            arr[x]++;
+            while (arr[x]>0){
+                arr[s2.charAt(left)-'a']--;
+                left++;
             }
-            if (map1.isEmpty()) {
+            if (right-left+1==s1.length()) {
                 return true;
             }
-            map1=map;
         }
         return false;
     }
