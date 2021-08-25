@@ -75,6 +75,24 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/P617MergeTwoBinaryTrees.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/P617MergeTwoBinaryTrees.md" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/P617MergeTwoBinaryTrees.java" />
+              <option name="questionId" value="617" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/P695MaxAreaOfIsland.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/P695MaxAreaOfIsland.md" />
+              <option name="path" value="$PROJECT_DIR$/src/leetcode/editor/cn/P695MaxAreaOfIsland.java" />
+              <option name="questionId" value="695" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/leetcode/editor/cn/P733FloodFill.java">
           <value>
             <LeetcodeEditor>

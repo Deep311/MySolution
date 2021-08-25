@@ -32,6 +32,9 @@
 // 👍 205 👎 0
 
 package leetcode.editor.cn;
+
+import java.util.ArrayDeque;
+
 /**
  *java:图像渲染
  *@author Gaosl
@@ -44,9 +47,62 @@ public class P733FloodFill{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
-        return null;
-
+//        int oldColor=image[sr][sc];
+//        image[sr][sc]=newColor;
+//        int m=image.length-1;
+//        int n=image[0].length-1;
+//        ArrayDeque<Integer> deque = new ArrayDeque<>();
+//        deque.add(sr);
+//        deque.add(sc);
+//        while(!deque.isEmpty()){
+//            Integer sr1 = deque.remove();
+//            Integer sc1 = deque.remove();
+//            int t=sr1+1;
+//            int b=sr1-1;
+//            int l=sc1-1;
+//            int r=sc1+1;
+//            if (t<=m&&(image[t][sc1]==oldColor)&&image[t][sc1]!=newColor) {
+//                image[t][sc1]=newColor;
+//                deque.add(t);
+//                deque.add(sc1);
+//            }
+//            if (l>=0&&(image[sr1][l]==oldColor&&image[sr1][l]!=newColor)) {
+//                image[sr1][l]=newColor;
+//                deque.add(sr1);
+//                deque.add(l);
+//            }
+//            if (b>=0&&(image[b][sc1]==oldColor&&image[b][sc1]!=newColor)) {
+//                image[b][sc1]=newColor;
+//                deque.add(b);
+//                deque.add(sc1);
+//            }
+//            if (r<=n&&(image[sr1][r]==oldColor&&image[sr1][r]!=newColor)) {
+//                image[sr1][r]=newColor;
+//                deque.add(sr1);
+//                deque.add(r);
+//            }
+//        }
+//        return image;
+        int oldColor=image[sr][sc];
+        dfs(image,sr,sc,newColor,oldColor);
+        return image;
     }
+
+    public void dfs(int[][] image, int x, int y, int newColor , int oldColor) {
+        if(x<0||x>image.length-1||y<0||y>image[0].length-1){
+            return ;
+        }
+        if(image[x][y]!=oldColor||image[x][y]==newColor){
+            return;
+        }
+        image[x][y]=newColor;
+        dfs(image,x+1,y,newColor,oldColor);
+        dfs(image,x-1,y,newColor,oldColor);
+        dfs(image,x,y+1,newColor,oldColor);
+        dfs(image,x,y-1,newColor,oldColor);
+    }
+
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
